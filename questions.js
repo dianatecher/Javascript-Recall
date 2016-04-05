@@ -83,17 +83,27 @@ var getFirstHalf = function(string) {
 	var stringBis = string.split('', Math.ceil(string.length/2));  //Math.ceil arrondit à la valeur entière superieure
                      
 	for (var letter of stringBis) {
-        		laMoitie += letter; 
+        		laMoitie += letter;  
         	}
    return laMoitie;
 }
 
 var makeNegative = function(number) {
-  return 'Write your method here';
+   	if (number > 0) {
+  		return (number * -1);
+  	} else {
+  		return number;
+  	}
 }
 
 var numberOfPalindromes = function(array) {
-  return 'Write your method here';
+var counter=0;
+
+	for (var item of array) {
+		if (item.split('').reverse().join('') === item)
+	counter+=1;
+	}
+	return counter;
 }
 
 var shortestWord = function(array) {
