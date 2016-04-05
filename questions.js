@@ -148,11 +148,22 @@ var calculateAverage = function(array) {
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
-  return 'Write your method here';
+  var i=0;  var array2 =[];
+	while (array[i] < 6) {
+	  array2.push(array[i]); 
+	  i+=1; 		
+	}
+ 	return array2; 
 }
 
 var convertArrayToObject = function(array) {
-  return 'Write your method here';
+var o = new Object;
+  for (var i=0; i < array.length; i++) {
+    if (i%2 === 0) {
+	o[array[i]] = array[i+1];   //Object['property'] = value
+    }
+}
+    return o;
 }
 
 var getAllLetters = function(array) {
