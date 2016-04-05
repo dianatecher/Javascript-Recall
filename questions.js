@@ -111,10 +111,10 @@ var shortest = '';
 	for (var i=1; i < array.length; i++)  {
   		if ((array[i-1].length) < (array[i].length)) {
   		shortest=array[i-1]; //Si si! ;-)
-      	}
-      return shortest;
-}
-} //Ggrr : SyntaxError: missing } after function body 
+  		}
+  	}
+ return shortest;
+} 
 
 var longestWord = function(array) {
   return 'Write your method here';
