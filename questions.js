@@ -117,23 +117,34 @@ var shortest = '';
 } 
 
 var longestWord = function(array) {
-  return 'Write your method here';
+	function returnMax(previousMax,word) {
+		//ternaire : retourne soit previousMax soit word
+		return previousMax.length > word.length ? previousMax : word;
+	}
+	return array.reduce(returnMax);
 }
 
 var sumNumbers = function(array) {
-  return 'Write your method here';
+	function mySum(nb1,nb2) {
+		return nb1 +nb2;
+	}
+	return array.reduce(mySum);//merci Célia
 }
 
 var repeatElements = function(array) {
-  return 'Write your method here';
+	array2 = array.slice();
+	return array.concat(array2);
 }
 
 var stringToNumber = function(string) {
-  return 'Write your method here';
+  return Number(string);
 }
 
 var calculateAverage = function(array) {
-  return 'Write your method here';
+ 	function mySum(nb1,nb2) {  //voir plus haut :sumNumbers 
+		return nb1 +nb2; 
+	}
+	return (array.reduce(mySum))/3;
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
