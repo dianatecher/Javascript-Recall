@@ -101,14 +101,20 @@ var counter=0;
 
 	for (var item of array) {
 		if (item.split('').reverse().join('') === item)
-	counter+=1;
+		counter+=1;
 	}
 	return counter;
 }
 
 var shortestWord = function(array) {
-  return 'Write your method here';
+var shortest = '';
+	for (var i=1; i < array.length; i++)  {
+  		if ((array[i-1].length) < (array[i].length)) {
+  		shortest=array[i-1]; //Si si! ;-)
+      	}
+      return shortest;
 }
+} //Ggrr : SyntaxError: missing } after function body 
 
 var longestWord = function(array) {
   return 'Write your method here';

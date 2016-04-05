@@ -47,7 +47,7 @@ describe('javascript-Recall', function(){
     var result = sortByLastLetter(['Lannister', 'Stark', 'Greyjoy', 'Targaryen']);
     expect(result).toEqual(['Stark', 'Targaryen', 'Lannister', 'Greyjoy']);
   });
-//
+
   it('gets the first half of a string', function(){
     var resultOne = getFirstHalf('dragon');
     var resultTwo = getFirstHalf('snake');
