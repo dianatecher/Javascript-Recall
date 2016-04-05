@@ -1,42 +1,91 @@
 
 var selectElementsStartingWithA = function(array) {
- return 'Write your method here';
+ // methode pour filtrer A
+	function startingWithA(words){
+ 	return words.charAt(0) == "a";
+	}
+	return array.filter(startingWithA); //cf la fonction .filter
 }
 
 var selectElementsStartingWithVowel = function(array) {
- return 'Write your method here';
+	var vowel = ["a","e","i","o","u","y"];
+		function firstElem(nom){
+ 			var firstLetter = nom.charAt(0);
+ 			// mode strict. -1 car le premier indice d'un tableau c'est 0
+ 			return vowel.indexOf(firstLetter)!==-1; 
+		}
+	return array.filter(firstElem);
 }
 
 var removeNullElements = function(array) {
-  return 'Write your method here';
-}
+ 	function checkNullItems(item) {
+ 		return item !== null;
+ 	}
+ 	return array.filter(checkNullItems);
+ }
 
 var removeNullAndFalseElements = function(array) {
-  return 'Write your method here';
+	function checkNull(item) {
+ 		return item !== null;
+ 	}
+
+ 	function checkFalse(item) {
+ 		return item !== false;
+ 	}
+ 	
+ 	var array2 = array.filter(checkNull);
+ 	return array2.filter(checkFalse);
 }
 
 var reverseWordsInArray = function(array) {
-  return 'Write your method here';
+	function reverseChar(word) {
+		return word.split('').reverse().join('');
+	}
+	return array.map(reverseChar);  //map applique une méthode à chaque valeur d'un tableau
+  	
+/*  	var array2 = [];
+  	for (var i=0;  i< array.length; i++) {
+  		array[i].reverse();
+  		array2.push(array[i]);
+  	}
+  	return array2;  
+  */
 }
-
+//@ revoir !!! cf. snippet everyPossiblePair.js
 var everyPossiblePair = function(array) {
-  return 'Write your method here';
+ 	var res = [];
+ 	var copyOfArray = array.slice().reverse();
+
+ 	for (var student1 of array) {
+ 		copyOfArray.pop();
+ 		for (var student2 of copyOfArray)  {
+ 			res.push([student1, student2].sort());
+ 		}
+ 	}
+ 	return res.sort();
 }
 
 var allElementsExceptFirstThree = function(array) {
-  return 'Write your method here';
+  return array.slice(3,array.length);  //[1,2,3,4,5,6] => [4,5,6]
 }
 
 var addElementToBeginning = function(array, element) {
-  return 'Write your method here';
+     array.unshift(element);
+     return array; //et surtout pas    return array.unshift(element) : qui retourne le nb total d'éléments après ajout. !!!
 }
-
+//cf.  reverseWordsInArray ligne 40
 var sortByLastLetter = function(array) {
-  return 'Write your method here';
+	return reverseWordsInArray(reverseWordsInArray(array).sort());
 }
 
 var getFirstHalf = function(string) {
-  return 'Write your method here';
+	var laMoitie = '';
+	var stringBis = string.split('', Math.ceil(string.length/2));  //Math.ceil arrondit à la valeur entière superieure
+                     
+	for (var letter of stringBis) {
+        		laMoitie += letter; 
+        	}
+   return laMoitie;
 }
 
 var makeNegative = function(number) {
